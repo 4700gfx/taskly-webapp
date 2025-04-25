@@ -9,7 +9,15 @@
 <body class="flex flex-col items-center justify-center min-h-screen min-w-screen bg-red-950">
 
 
-  <h1 class="text-7xl mb-10 text-white">Taskly</h1>
+  <h1 class="text-7xl mb-10 text-white">Taskly To-Do</h1>
+
+  <div class="score-display bg-white w-5/8 h-15 mb-5 rounded-3xl">
+    <ul class="flex flex-row p-6">
+      <li class="me-8 font-bold">Day: 22 April 2025</li>
+      <li class="me-8 font-bold">Score: 2500</li>
+      <li class="me-8 font-bold">Mode: Break</li>
+    </ul>
+  </div>
 
   <section class="flex flex-row h-[70vh] w-10/12 bg-black text-white rounded-3xl">
   
@@ -20,18 +28,37 @@
     <div class="mt-5 bg-gray-600 rounded-2xl p-4">
       <ul>
         <li class="text-xl my-5">Home 🏡</li>
-        <li class="text-xl my-5">Home 🏡</li>
-        <li class="text-xl my-5">Home 🏡</li>
-        <li class="text-xl my-5">Home 🏡</li>
+        <li class="text-xl my-5">Completed ✅</li>
+        <li class="text-xl my-5">Important ⁉️</li>
+        <li class="text-xl my-5">Someday 📆</li>
+        <li class="text-xl my-5">New List ➕ </li>
       </ul>
     </div>
   </div>
 
 
-  <div class="task-panel bg-white text-black m-5 rounded-3xl w-11/12 p-6">
+  <div class="task-container bg-white text-black m-5 rounded-3xl w-11/12 p-6">
     <h1 class="text-2xl font-semibold">
       To Do List 
     </h1>
+
+    <div class="task-list mt-5 mb-52">
+      <ul class="list">
+        <li class="text-lg mt-2">Schedule Appointment</li>
+        <li class="text-lg mt-2">Schedule Appointment</li>
+        <li class="text-lg mt-2">Schedule Appointment</li>
+        <li class="text-lg mt-2">Schedule Appointment</li>
+        <li class="text-lg mt-2">Schedule Appointment</li>
+        <li class="text-lg mt-2">Schedule Appointment</li>
+        <li class="text-lg mt-2">Schedule Appointment</li>
+        <li class="text-lg mt-2">Schedule Appointment</li>
+      </ul>
+    </div>
+
+    <div class="time-section text-3xl font-semibold">
+      <h1>Time Remaining:</h1>
+      01:00:00
+    </div>
   </div>
 
   </section>
