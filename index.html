@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Document</title>
+  <title>Taskly App</title>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen min-w-screen bg-red-950">
 
@@ -44,21 +44,117 @@
 
     <div class="task-list mt-5 mb-52">
       <ul class="list">
-        <li class="text-lg mt-2">Schedule Appointment</li>
-        <li class="text-lg mt-2">Schedule Appointment</li>
-        <li class="text-lg mt-2">Schedule Appointment</li>
-        <li class="text-lg mt-2">Schedule Appointment</li>
-        <li class="text-lg mt-2">Schedule Appointment</li>
-        <li class="text-lg mt-2">Schedule Appointment</li>
-        <li class="text-lg mt-2">Schedule Appointment</li>
-        <li class="text-lg mt-2">Schedule Appointment</li>
+
+        <div class="flex flex-row">
+          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
+          <li class="text-lg mt-2">Schedule Appointment</li>
+          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
+            py-1.5 px-8 rounded-full">
+            Critcal
+          </div>
+        </div>
+
+
+        <div class="flex flex-row">
+          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
+          <li class="text-lg mt-2">Schedule Appointment</li>
+          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
+            py-1.5 px-8 rounded-full">
+            Critcal
+          </div>
+        </div>
+
+
+        <div class="flex flex-row my-2">
+          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
+          <li class="text-lg mt-2">Schedule Appointment</li>
+          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
+            py-1.5 px-8 rounded-full">
+            Critcal
+          </div>
+        </div>
+
+        <div class="flex flex-row my-2">
+          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
+          <li class="text-lg mt-2">Schedule Appointment</li>
+          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
+            py-1.5 px-8 rounded-full">
+            Critcal
+          </div>
+        </div>
+
+        <div class="flex flex-row my-2">
+          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
+          <li class="text-lg mt-2">Schedule Appointment</li>
+          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
+            py-1.5 px-8 rounded-full">
+            Critcal
+          </div>
+        </div>
+
+
+        <div class="flex flex-row my-2">
+          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
+          <li class="text-lg mt-2">Schedule Appointment</li>
+          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
+            py-1.5 px-8 rounded-full">
+            Critcal
+          </div>
+        </div>
+
+
+        <div class="flex flex-row my-2">
+          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
+          <li class="text-lg mt-2">Schedule Appointment</li>
+          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
+            py-1.5 px-8 rounded-full">
+            Critcal
+          </div>
+        </div>
+
+
+        <div class="flex flex-row my-2">
+          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
+          <li class="text-lg mt-2">Schedule Appointment</li>
+          <div class="bg-green-900 text-white font-semibold mt-1 ml-5 
+            py-1.5 px-8 rounded-full">
+            Low
+          </div>
+        </div>
+
       </ul>
     </div>
 
-    <div class="time-section text-3xl font-semibold">
-      <h1>Time Remaining:</h1>
-      01:00:00
+    <div class="time-section flex flex-ro gap-10 text-3xl font-semibold">
+      <div>
+        <h1>Time Remaining ⏰:</h1>
+        <p>01:00:00</p>
+      </div>
+
+      <div>
+        <h1>Score Multiplier ✖️:</h1>
+        <p>x2.5</p>
+      </div>
+
+      <div>
+        <h1>Last High Score 🎮:</h1>
+        <p>20000</p>
+      </div>
+
     </div>
+
+
+    <div class="flex flex-row mt-8">
+      <input type="text" class="task-input bg-gray-400 py-3 w-1/2 rounded-xl">
+      <button class="task-add-button bg-black text-white mx-5 px-8 rounded-2xl">Add Task</button>
+      <button class="start-button bg-green-800 text-white mx-5 px-8 rounded-2xl">Start</button>
+      <button class="pause-button bg-red-300 text-white mx-5 px-8 rounded-2xl">Pause</button>
+      <button class="stop-button bg-red-950 text-white mx-5 px-8 rounded-2xl">Stop</button>
+    </div>
+
+
+
+    
   </div>
 
   </section>
