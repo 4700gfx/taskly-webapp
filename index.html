@@ -6,6 +6,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Taskly App</title>
 </head>
+
 <body class="flex flex-col items-center justify-center min-h-screen min-w-screen bg-red-950">
 
 
@@ -27,11 +28,11 @@
     </h1>
     <div class="mt-5 bg-gray-600 rounded-2xl p-4">
       <ul>
-        <li class="text-xl my-5">Home 🏡</li>
-        <li class="text-xl my-5">Completed ✅</li>
-        <li class="text-xl my-5">Important ⁉️</li>
-        <li class="text-xl my-5">Someday 📆</li>
-        <li class="text-xl my-5">New List ➕ </li>
+        <li class="filtered-list text-xl my-5">Home 🏡</li>
+        <li class="filtered-list text-xl my-5">Completed ✅</li>
+        <li class="filtered-list text-xl my-5">Important ⁉️</li>
+        <li class="filtered-list text-xl my-5">Someday 📆</li>
+        <li class="filtered-list text-xl my-5">New List ➕ </li>
       </ul>
     </div>
   </div>
@@ -43,82 +44,14 @@
     </h1>
 
     <div class="task-list mt-5 mb-52">
-      <ul class="list">
+      <ul class="list-container">
 
-        <div class="flex flex-row">
+        <div class="task-item flex flex-row">
           <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
           <li class="text-lg mt-2">Schedule Appointment</li>
           <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
             py-1.5 px-8 rounded-full">
             Critcal
-          </div>
-        </div>
-
-
-        <div class="flex flex-row">
-          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
-          <li class="text-lg mt-2">Schedule Appointment</li>
-          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
-            py-1.5 px-8 rounded-full">
-            Critcal
-          </div>
-        </div>
-
-
-        <div class="flex flex-row my-2">
-          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
-          <li class="text-lg mt-2">Schedule Appointment</li>
-          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
-            py-1.5 px-8 rounded-full">
-            Critcal
-          </div>
-        </div>
-
-        <div class="flex flex-row my-2">
-          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
-          <li class="text-lg mt-2">Schedule Appointment</li>
-          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
-            py-1.5 px-8 rounded-full">
-            Critcal
-          </div>
-        </div>
-
-        <div class="flex flex-row my-2">
-          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
-          <li class="text-lg mt-2">Schedule Appointment</li>
-          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
-            py-1.5 px-8 rounded-full">
-            Critcal
-          </div>
-        </div>
-
-
-        <div class="flex flex-row my-2">
-          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
-          <li class="text-lg mt-2">Schedule Appointment</li>
-          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
-            py-1.5 px-8 rounded-full">
-            Critcal
-          </div>
-        </div>
-
-
-        <div class="flex flex-row my-2">
-          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
-          <li class="text-lg mt-2">Schedule Appointment</li>
-          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
-            py-1.5 px-8 rounded-full">
-            Critcal
-          </div>
-        </div>
-
-
-        <div class="flex flex-row my-2">
-          <img class="checked h-8 w-8 mt-2 mr-2" src="images/checked.png" alt="unchecked">
-          <li class="text-lg mt-2">Schedule Appointment</li>
-          <div class="bg-green-900 text-white font-semibold mt-1 ml-5 
-            py-1.5 px-8 rounded-full">
-            Low
           </div>
         </div>
 
@@ -146,8 +79,8 @@
 
     <div class="flex flex-row mt-8">
       <input type="text" class="task-input bg-gray-400 py-3 w-1/2 rounded-xl">
-      <button class="task-add-button bg-black text-white mx-5 px-8 rounded-2xl">Add Task</button>
-      <button class="start-button bg-green-800 text-white mx-5 px-8 rounded-2xl">Start</button>
+      <button class="add-task-button bg-black text-white mx-5 px-8 rounded-2xl">Add Task</button>
+      <button class="play-button bg-green-800 text-white mx-5 px-8 rounded-2xl">Start</button>
       <button class="pause-button bg-red-300 text-white mx-5 px-8 rounded-2xl">Pause</button>
       <button class="stop-button bg-red-950 text-white mx-5 px-8 rounded-2xl">Stop</button>
     </div>
@@ -158,6 +91,7 @@
   </div>
 
   </section>
+  <script src="script.js"></script>
 
 </body>
 </html>
