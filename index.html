@@ -15,7 +15,7 @@
   <div class="score-display bg-white w-5/8 h-15 mb-5 rounded-3xl">
     <ul class="flex flex-row p-6">
       <li class="me-8 font-bold">Day: 22 April 2025</li>
-      <li class="me-8 font-bold">Score: 2500</li>
+      <li class="me-8 font-bold score">Score:</li>
       <li class="me-8 font-bold">Mode: Break</li>
     </ul>
   </div>
@@ -78,12 +78,22 @@
 
 
     <div class="flex flex-row mt-8">
-      <input type="text" class="task-input bg-gray-400 py-3 w-1/2 rounded-xl">
-      <button class="add-task-button bg-black text-white mx-5 px-8 rounded-2xl">Add Task</button>
-      <button class="play-button bg-green-800 text-white mx-5 px-8 rounded-2xl">Start</button>
-      <button class="pause-button bg-red-300 text-white mx-5 px-8 rounded-2xl">Pause</button>
-      <button class="stop-button bg-red-950 text-white mx-5 px-8 rounded-2xl">Stop</button>
+      <input type="text" class="task-input bg-gray-400 py-3 w-1/2 rounded-xl" placeholder="Enter task...">
+      
+      <!-- Priority Dropdown -->
+      <select class="priority-select bg-gray-300 rounded-xl mx-3 px-4">
+        <option value="Critical">Critical</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    
+      <button class="add-task-button bg-black text-white mx-3 px-8 rounded-2xl">Add Task</button>
+      <button class="play-button bg-green-800 text-white mx-3 px-8 rounded-2xl">Start</button>
+      <button class="pause-button bg-red-300 text-white mx-3 px-8 rounded-2xl">Pause</button>
+      <button class="stop-button bg-red-950 text-white mx-3 px-8 rounded-2xl">Stop</button>
     </div>
+    
 
 
 

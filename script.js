@@ -1,85 +1,94 @@
-//VARIABLES FOR APPLICATION 
-
-//Main To Do Component Variables
-const homePanel = document.querySelector('.home-panel');
-const filteredList = document.querySelector('.filtered-list')
-const taskContainer = document.querySelector('.task-container')
-const taskList = document.querySelector('.task-list')
-const taskItem = document.querySelector('.task-item')
-
-//Buttons Variables 
-let input = document.querySelector('.task-input')
+// VARIABLES 
+const input = document.querySelector('.task-input');
 const addTaskButton = document.querySelector('.add-task-button');
 const pauseButton = document.querySelector('.pause-button');
 const playButton = document.querySelector('.play-button');
 const stopButton = document.querySelector('.stop-button');
+const taskListContainer = document.querySelector('.list-container');
+const prioritySelect = document.querySelector('.priority-select');
+const scoreDisplay = document.querySelector('.score');
 
+// POINT SYSTEM
+let score = 0;
 
+// Priority badge colors and points
+const prioritySettings = {
+  "Critical": { color: "bg-red-900", points: 50 },
+  "High": { color: "bg-orange-600", points: 30 },
+  "Medium": { color: "bg-yellow-500", points: 20 },
+  "Low": { color: "bg-green-600", points: 10 }
+};
 
+// EVENT LISTENERS 
 
-
-
-
-
-
-
-
-
-
-//Event Listeners
 addTaskButton.addEventListener('click', function(){
-  //Caputures Value of Input Bar 
-  let taskName = input.value 
+  let taskName = input.value.trim();
+  let priority = prioritySelect.value;
 
-  if(!taskName){
-    console.alert('Type In Your Task')
-  } else{
-      //Creates a Div
-  const newTask = document.createElement('div')
-
-  //Adds HTML to Div 
-  newTask.innerHTML = `<div class="task-item flex flex-row">
-                          <img class="unchecked h-8 w-8 mt-2 mr-2" id="item" src="images/unchecked.png" alt="unchecked">
-                            <li class="text-lg mt-2">${taskName}</li>
-                          <div class="bg-red-900 text-white font-semibold mt-1 ml-5 
-                          py-1.5 px-8 rounded-full">
-                            Critcal
-                          </div>
-                        </div> `;
-  //Adds Div component after the ul
-  document.querySelector('.list-container').appendChild(newTask)
-
-  //Resets Input Bar 
-  input.value = " ";
+  if (taskName === "") {
+    alert("Please enter a task!");
+    return;
   }
 
-  //Reads the Task to Console
-  console.log(taskName)
- 
-})
+  // Create task container div
+  const newTask = document.createElement('div');
+  newTask.classList.add("task-item", "flex", "flex-row", "items-center", "mb-3");
 
+  // Set dynamic priority color and points
+  const { color, points } = prioritySettings[priority] || { color: "bg-gray-500", points: 0 };
 
+  // Populate new task HTML
+  newTask.innerHTML = `
+    <img class="check-toggle h-8 w-8 mr-3 cursor-pointer" src="images/unchecked.png" alt="check">
+    <li class="task-name text-lg">${taskName}</li>
+    <div class="priority-badge ${color} text-white font-semibold ml-5 py-1.5 px-5 rounded-full">
+      ${priority}
+    </div>
+    <div class="task-points ml-2 p-2 rounded-full ${color}">${points}</div>
+  `;
 
-taskItem.addEventListener('click', function(){
-  if(taskItem.classList.contains('unchecked')){
-    const activeTask = document.getElementById('item')
-    activeTask.src = "../images/checked.png"
+  // Append to the list
+  taskListContainer.appendChild(newTask);
+
+  // Reset input
+  input.value = "";
+});
+
+// Toggle check icon and award points when task item image is clicked
+taskListContainer.addEventListener('click', function(e) {
+  if (e.target && e.target.classList.contains('check-toggle')) {
+    const taskItem = e.target.closest('.task-item');
+    const taskName = taskItem.querySelector('.task-name');
+    const taskPoints = parseInt(taskItem.querySelector('.task-points').textContent);
+
+    if (e.target.src.includes("unchecked.png")) {
+      e.target.src = "images/checked.png";
+      taskName.classList.add("line-through", "text-gray-500");
+
+      // Add points
+      score += taskPoints;
+      scoreDisplay.textContent = `Score: ${score}`;
+
+    } else {
+      e.target.src = "images/unchecked.png";
+      taskName.classList.remove("line-through", "text-gray-500");
+
+      // Subtract points
+      score -= taskPoints;
+      scoreDisplay.textContent = score;
+    }
   }
-})
+});
 
-
-
+// Timer control logs
 playButton.addEventListener('click', function(){
-  console.log('Starting Clock')
-})
-
+  console.log('Starting Clock');
+});
 
 pauseButton.addEventListener('click', function(){
-  console.log('Pausing Clock')
-})
-
+  console.log('Pausing Clock');
+});
 
 stopButton.addEventListener('click', function(){
-  console.log('Stopping Clock')
-})
-
+  console.log('Stopping Clock');
+});
